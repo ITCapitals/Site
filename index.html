@@ -58,7 +58,7 @@
       z-index: 20;
       background: rgba(0,0,0,0.88);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: none;
     }
     .header-inner {
       min-height: 82px;
@@ -120,22 +120,27 @@
       color: #fff;
     }
     .footer {
-      border-top: 1px solid rgba(255,255,255,0.08);
+      border-top: none;
+      padding: 18px 0 10px;
     }
     .footer-box {
-      min-height: 82px;
+      min-height: 96px;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: space-between;
       gap: 20px;
     }
     .footer-note {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 12px;
+      line-height: 1;
       margin: 0;
+      align-self: flex-end;
+      padding-bottom: 2px;
     }
     .footer-logo {
-      width: 170px;
+      width: auto;
+      height: 72.5px;
       max-width: 44vw;
       opacity: 1;
     }
@@ -143,7 +148,8 @@
       .footer-box {
         flex-direction: column;
         align-items: flex-start;
-        padding: 20px 0;
+        justify-content: flex-end;
+        padding: 20px 0 6px;
         min-height: unset;
       }
       .btn {
@@ -157,7 +163,11 @@
         max-width: 56vw;
       }
       .footer-logo {
-        width: 150px;
+        height: 60px;
+      }
+      .footer-note {
+        font-size: 11px;
+        padding-bottom: 0;
       }
     }
   </style>
@@ -191,7 +201,7 @@
   <footer class="footer">
     <div class="container footer-box">
       <p class="footer-note">&copy; IT Capitals 2026</p>
-      <img class="footer-logo" src="images/fulllogo_transparent_nobuffer.png" alt="IT Capitals footer logo" width="170" height="60" loading="lazy">
+      <img class="footer-logo" src="images/fulllogo_transparent_nobuffer.png" alt="IT Capitals footer logo" width="213" height="73" loading="lazy">
     </div>
   </footer>
 </body>
