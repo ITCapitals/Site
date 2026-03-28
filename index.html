@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>IT Capitals</title>
   <meta name="description" content="IT Capitals">
-  <link rel="icon" type="image/png" href="images/fulllogo_transparent_nobuffer_edited_1.png">
-  <link rel="apple-touch-icon" href="images/fulllogo_transparent_nobuffer_edited_1.png">
+  <link rel="icon" type="image/png" href="images/fulllogo_transparent_nobuffer.png">
+  <link rel="apple-touch-icon" href="images/fulllogo_transparent_nobuffer.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -83,25 +83,25 @@
     .brand img {
       width: 188px;
       max-width: 48vw;
-      filter: brightness(0) invert(1);
-    }
-
-    .header-link {
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 16px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      font-size: 14px;
-      color: var(--muted);
     }
 
     .hero {
       position: relative;
       padding: 88px 0 72px;
       overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      bottom: -30px;
+      width: min(42vw, 420px);
+      height: min(42vw, 420px);
+      background: url('images/fulllogo_transparent_nobuffer.png') center/contain no-repeat;
+      opacity: 0.05;
+      filter: brightness(0) invert(1);
+      pointer-events: none;
     }
 
     .hero-inner {
@@ -117,6 +117,13 @@
       letter-spacing: -0.06em;
       font-weight: 800;
       text-transform: uppercase;
+    }
+
+    .lead {
+      margin: 24px 0 0;
+      max-width: 34ch;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.4vw, 1.08rem);
     }
 
     .hero-actions {
@@ -136,14 +143,6 @@
       font-size: 14px;
       font-weight: 600;
       border: 1px solid var(--line);
-    }
-
-    .btn-primary {
-       background: transparent;
-      color: #fff;
-    }
-
-    .btn-secondary {
       background: transparent;
       color: #fff;
     }
@@ -161,12 +160,6 @@
       padding-top: 10px;
     }
 
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
     .footer-note {
       margin-top: 14px;
       color: var(--muted);
@@ -176,8 +169,7 @@
     .footer-logo {
       width: 170px;
       max-width: 44vw;
-      filter: brightness(0) invert(1);
-      opacity: 0.9;
+      opacity: 1;
     }
 
     @media (max-width: 720px) {
@@ -187,13 +179,12 @@
         display: grid;
       }
 
-      .hero {
-        padding: 64px 0 54px;
+      .btn {
+        width: 100%;
       }
 
-      .hero-actions,
-      .footer-links {
-        flex-direction: column;
+      .hero {
+        padding: 64px 0 54px;
       }
 
       .brand img {
@@ -221,10 +212,13 @@
   <main id="main">
     <section class="hero">
       <div class="container hero-inner">
-        <h1>YES.</h1>
+        <h1>Built for what comes next.</h1>
+        <p class="lead">
+          Digital assets, blockchain, and strategic technology — approached quietly, precisely, and with intention.
+        </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:asif@itcapitals.com">Text</a>
-          <a class="btn btn-secondary" href="tel:4372233792">Talk</a>
+          <a class="btn" href="mailto:asif@itcapitals.com">Text</a>
+          <a class="btn" href="tel:4372233792">Talk</a>
         </div>
       </div>
     </section>
@@ -232,9 +226,10 @@
 
   <footer class="footer">
     <div class="container footer-box">
+      <div>
         <p class="footer-note">© IT Capitals 2026</p>
       </div>
-      <img class="footer-logo" src="images/fulllogo_transparent_nobuffer_edited_1.png" alt="IT Capitals footer logo" width="170" height="60" loading="lazy">
+      <img class="footer-logo" src="images/fulllogo_transparent_nobuffer.png" alt="IT Capitals footer logo" width="170" height="60" loading="lazy">
     </div>
   </footer>
 </body>
