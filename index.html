@@ -127,7 +127,7 @@
       min-height: 96px;
       display: flex;
       align-items: flex-end;
-      justify-content: space-between;
+      justify-content: flex-end;
       gap: 20px;
     }
     .footer-note {
@@ -137,17 +137,12 @@
       margin: 0;
       align-self: flex-end;
       padding-bottom: 2px;
-    }
-    .footer-logo {
-      width: auto;
-      height: 72.5px;
-      max-width: 44vw;
-      opacity: 1;
+      text-align: right;
     }
     @media (max-width: 720px) {
       .footer-box {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: flex-end;
         justify-content: flex-end;
         padding: 20px 0 6px;
         min-height: unset;
@@ -162,12 +157,10 @@
         width: 156px;
         max-width: 56vw;
       }
-      .footer-logo {
-        height: 60px;
-      }
       .footer-note {
         font-size: 11px;
         padding-bottom: 0;
+        text-align: right;
       }
     }
   </style>
@@ -201,7 +194,6 @@
   <footer class="footer">
     <div class="container footer-box">
       <p class="footer-note">&copy; IT Capitals 2026</p>
-      <img class="footer-logo" src="images/fulllogo_transparent_nobuffer.png" alt="IT Capitals footer logo" width="213" height="73" loading="lazy">
     </div>
   </footer>
 </body>
