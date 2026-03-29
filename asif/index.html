@@ -142,133 +142,189 @@
       max-width: 100%;
       height: auto;
     }
-    .flowchart {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
+
+    /* Clean tree-style timeline */
+    .timeline-wrapper {
       margin-top: 32px;
     }
-    .flow-item {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 24px;
+    .timeline {
       position: relative;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 8px 0;
     }
-    .flow-item:not(:last-child)::after {
-      content: '';
+    .timeline::before {
+      content: "";
       position: absolute;
-      bottom: -24px;
       left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(255,255,255,0.28);
       transform: translateX(-50%);
-      width: 2px;
-      height: 24px;
-      background: var(--line);
     }
-    .flow-header {
-      display: flex;
-      justify-content: space-between;
+    .timeline-year {
+      position: relative;
+      width: 120px;
+      margin: 0 auto 8px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .timeline-year::before {
+      content: none;
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
       align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 12px;
+      margin-bottom: 24px;
     }
-    .flow-company {
-      font-size: 1.2rem;
+
+    .timeline-item {
+      position: relative;
+      padding: 4px 0;
+      background: none;
+      border: none;
+      border-radius: 0;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 0.95rem;
+      width: 18px;
+      height: 1px;
+      background: rgba(255,255,255,0.35);
+    }
+    .timeline-item.left::before {
+      right: -18px;
+    }
+    .timeline-item.right::before {
+      left: -18px;
+    }
+
+    .timeline-item.left {
+      text-align: right;
+    }
+
+    .timeline-company {
+      font-size: 1rem;
       font-weight: 700;
+      margin: 0 0 2px;
+    }
+    .timeline-title {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0 0 2px;
+    }
+    .timeline-meta {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin: 0 0 4px;
+    }
+    .timeline-meta span + span::before {
+      content: " • ";
+      margin: 0 4px;
+    }
+    .timeline-body {
+      color: var(--muted);
+      font-size: 0.9rem;
       margin: 0;
     }
-    .flow-date {
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 500;
-      white-space: nowrap;
-    }
-    .flow-title {
-      color: var(--muted);
-      font-size: 1rem;
-      font-weight: 600;
-      margin: 4px 0;
-    }
-    .flow-location {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin: 2px 0 12px;
-    }
-    .flow-projects {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin: 8px 0 0;
-    }
-    .flow-projects strong {
+    .timeline-body strong {
       color: var(--text);
     }
-    .flow-dept {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin: 4px 0;
+
+    .footer {
+      padding: 32px 0;
     }
-   .footer {
-  padding: 32px 0;
-}
-.footer-box {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  gap: 20px;
-  padding: 20px 0;
-}
-.footer-note {
-  color: var(--muted);
-  font-size: 11px;
-  margin: 0;
-  text-align: right;
-}
-@media (max-width: 720px) {
-  .background-section {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
+    .footer-box {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      gap: 20px;
+      padding: 20px 0;
+    }
+    .footer-note {
+      color: var(--muted);
+      font-size: 11px;
+      margin: 0;
+      text-align: right;
+    }
 
-  .background-image {
-    order: 1;
-  }
+    @media (max-width: 720px) {
+      .background-section {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
 
-  .background-content {
-    order: 2;
-  }
+      .background-image {
+        order: 1;
+      }
 
-  .content {
-    padding: 32px 0 56px;
-  }
+      .background-content {
+        order: 2;
+      }
 
-  .footer-box {
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding: 20px 0 6px;
-    min-height: unset;
-  }
+      .content {
+        padding: 32px 0 56px;
+      }
 
-  .btn {
-    width: 100%;
-  }
+      .footer-box {
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding: 20px 0 6px;
+        min-height: unset;
+      }
 
-  .brand img {
-    width: 156px;
-    max-width: 56vw;
-  }
+      .btn {
+        width: 100%;
+      }
 
-  .footer {
-    padding: 20px 0 16px;
-  }
+      .brand img {
+        width: 156px;
+        max-width: 56vw;
+      }
 
-  .footer-note {
-    font-size: 11px;
-    padding-bottom: 0;
-    text-align: right;
-  }
+      .footer {
+        padding: 20px 0 16px;
+      }
+
+      .footer-note {
+        font-size: 11px;
+        padding-bottom: 0;
+        text-align: right;
+      }
+
+      .timeline {
+        padding-left: 12px;
+      }
+      .timeline::before {
+        left: 10px;
+        transform: none;
+      }
+      .timeline-row {
+        grid-template-columns: 1fr;
+      }
+      .timeline-item {
+        margin-left: 20px;
+      }
+      .timeline-item.left::before,
+      .timeline-item.right::before {
+        left: -18px;
+        right: auto;
+      }
+      .timeline-item.left {
+        text-align: left;
+      }
     }
   </style>
 </head>
@@ -285,7 +341,6 @@
 
   <main id="main">
     <div class="container content">
-      
       <div class="background-section">
         <div class="background-content">
           <h1 class="section-title">The Background</h1>
@@ -307,73 +362,78 @@
 
       <section class="section">
         <h2 class="section-title">Project Contributions</h2>
-        
-        <div class="flowchart">
-          <div class="flow-item">
-            <div class="flow-header">
-              <div>
-                <h3 class="flow-company">IT Capitals</h3>
-                <p class="flow-title">Founder</p>
-                <p class="flow-location">Ontario, Canada</p>
-              </div>
-              <span class="flow-date">Feb 2025 - Present</span>
-            </div>
-            <div class="flow-projects">
-              <strong>Project Contributions:</strong><br>
-              On-demand handyman App (in progress, US Based)<br>
-              Blockchain Web3 App (in-progress)
-            </div>
-          </div>
 
-          <div class="flow-item">
-            <div class="flow-header">
-              <div>
-                <h3 class="flow-company">Alburj.ae</h3>
-                <p class="flow-title">IT operations and Management specialist</p>
-                <p class="flow-location">Dubai, UAE</p>
-              </div>
-              <span class="flow-date">Apr 2023 - Dec 2024</span>
-            </div>
-            <div class="flow-projects">
-              <strong>Project Contributions:</strong><br>
-              Altwarcentre.ae<br>
-              Dubaihub.uk<br>
-              alburj.ae
-            </div>
-          </div>
+        <div class="timeline-wrapper">
+          <div class="timeline">
 
-          <div class="flow-item">
-            <div class="flow-header">
-              <div>
-                <h3 class="flow-company">DU.ae x TCS</h3>
-                <p class="flow-title">Network Engineer</p>
-                <p class="flow-location">Dubai, UAE</p>
+            <div class="timeline-year">2025 &ndash; Present</div>
+            <div class="timeline-row">
+              <div class="timeline-item left">
+                <h3 class="timeline-company">IT Capitals</h3>
+                <p class="timeline-title">Founder</p>
+                <p class="timeline-meta">
+                  <span>Ontario, Canada</span>
+                </p>
+                <p class="timeline-body">
+                  <strong>Project Contributions:</strong><br>
+                  On-demand handyman App (in progress, US Based)<br>
+                  Blockchain Web3 App (in-progress)
+                </p>
               </div>
-              <span class="flow-date">Jan 2021 - Dec 2022</span>
+              <div></div>
             </div>
-            <div class="flow-dept">
-              <strong>Department:</strong> Enterprise Service Fulfilment
-            </div>
-          </div>
 
-          <div class="flow-item">
-            <div class="flow-header">
-              <div>
-                <h3 class="flow-company">DU.ae x TCS</h3>
-                <p class="flow-title">CSM Engineer</p>
-                <p class="flow-location">Dubai, UAE</p>
+            <div class="timeline-year">2023 &ndash; 2024</div>
+            <div class="timeline-row">
+              <div></div>
+              <div class="timeline-item right">
+                <h3 class="timeline-company">Alburj.ae</h3>
+                <p class="timeline-title">IT operations and Management specialist</p>
+                <p class="timeline-meta">
+                  <span>Dubai, UAE</span>
+                </p>
+                <p class="timeline-body">
+                  <strong>Project Contributions:</strong><br>
+                  Altwarcentre.ae<br>
+                  Dubaihub.uk<br>
+                  alburj.ae
+                </p>
               </div>
-              <span class="flow-date">Nov 2018 - Dec 2020</span>
             </div>
-            <div class="flow-dept">
-              <strong>Department:</strong><br>
-              Consumer Service Assurance<br>
-              Consumer Service Fulfillment
+
+            <div class="timeline-year">2021 &ndash; 2022</div>
+            <div class="timeline-row">
+              <div class="timeline-item left">
+                <h3 class="timeline-company">DU.ae x TCS</h3>
+                <p class="timeline-title">Network Engineer</p>
+                <p class="timeline-meta">
+                  <span>Dubai, UAE</span>
+                </p>
+                <p class="timeline-body">
+                  <strong>Department:</strong> Enterprise Service Fulfilment
+                </p>
+              </div>
+              <div></div>
             </div>
+
+            <div class="timeline-year">2018 &ndash; 2020</div>
+            <div class="timeline-row">
+              <div></div>
+              <div class="timeline-item right">
+                <h3 class="timeline-company">DU.ae x TCS</h3>
+                <p class="timeline-title">CSM Engineer</p>
+                <p class="timeline-meta">
+                  <span>Dubai, UAE</span>
+                </p>
+                <p class="timeline-body">
+                  <strong>Department:</strong> Consumer Service Assurance; Consumer Service Fulfillment
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
-
     </div>
   </main>
 
