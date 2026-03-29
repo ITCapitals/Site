@@ -208,57 +208,42 @@
       font-size: 0.95rem;
       margin: 4px 0;
     }
-    .footer {
-      padding: 32px 0;
-    }
-    .footer-box {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 20px 0;
-    }
-    .footer-note {
-      color: var(--muted);
-      font-size: 11px;
-      margin: 0;
-    }
-    .footer-logo {
-      width: 235px;
-      max-width: 44vw;
-      opacity: 1;
-    }
-    @media (max-width: 920px) {
-      .background-section {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-      .background-image {
-        order: -1;
-      }
-      .flow-header {
-        flex-direction: column;
-      }
-    }
-    @media (max-width: 720px) {
-      .footer-box {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px 0;
-      }
-      .btn {
-        width: 100%;
-      }
-      .content {
-        padding: 32px 0 48px;
-      }
-      .brand img {
-        width: 156px;
-        max-width: 56vw;
-      }
-      .footer-logo {
-        width: 195px;
-      }
+   .footer {
+  padding: 32px 0;
+}
+.footer-box {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 20px 0;
+}
+.footer-note {
+  color: var(--muted);
+  font-size: 11px;
+  margin: 0;
+  text-align: right;
+}
+@media (max-width: 720px) {
+  .footer-box {
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 20px 0;
+  }
+  .btn {
+    width: 100%;
+  }
+  .content {
+    padding: 32px 0 48px;
+  }
+  .brand img {
+    width: 156px;
+    max-width: 56vw;
+  }
+  .footer-note {
+    font-size: 11px;
+    text-align: right;
+  }
     }
   </style>
 </head>
@@ -370,7 +355,6 @@
   <footer class="footer">
     <div class="container footer-box">
       <p class="footer-note">&copy; IT Capitals 2026</p>
-      <img class="footer-logo" src="../images/fulllogo_transparent_nobuffer.png" alt="IT Capitals footer logo" width="235" height="73" loading="lazy">
     </div>
   </footer>
 </body>
